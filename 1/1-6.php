@@ -12,9 +12,7 @@ for ($i = 1000; $i < 10000; $i++) {
         $iCurrent = (int)($iCurrent / 10);
 
     }
-    if($isRight){
-        echo $i.' ';
+    if ($isRight) {
+        echo $i . ' ';
     }
-
-
 }
