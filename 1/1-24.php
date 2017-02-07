@@ -14,41 +14,24 @@ function print_binary($x)
     }
 }
 
-function hex_count($x)
-{
-    $digits = 0;
-    while ($x > 0)
-    {
-        ++$digits;
-        $x = (int)($x / 16);
-    }
-    return $digits;
-}
-
 function print_hexadecimal($x)
 {
-    $size = hex_count($x) + 1;
-    $buffer = Array();
-    $index = $size - 2;
-    while ($x > 0)
-    {
-       $mod = $x % 16;
-
-        if ($mod >= 10)
-            $buffer[$index--] = ($mod - 10). 'A';
-        else
-            $buffer[$index--] = $mod.'0';
-
+    $result = '';
+    $arr = Array('A', 'B', 'C', 'D', 'E', 'F');
+    do {
+        $remain = $x % 16;
         $x = (int)($x / 16);
-        echo $buffer[$index + 1];
-    }
-    $buffer[$size - 1] = '\0';
-    return $buffer;
+        if ($remain < 10) {
+            $result = (string)$remain . $result;
+        } else {
+            $result = $arr[$remain - 10] . $result;
+        }
 
-
+    } while ($x != 0);
+    echo $result;
 }
 
-$x = 267;
+$x = 1239;
 print_binary($x);
 echo '<br>';
 print_hexadecimal($x);
