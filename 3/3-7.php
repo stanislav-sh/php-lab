@@ -1,24 +1,26 @@
 <?php
-$A = Array(1, 14, -54, 67, 12, 0, 34, 5, -27, 54, 3);
+$A = Array(1, 14, -54, 0, 53, 0, 34, 5, -27, 54, 3);
 $i = 0;
-$max = $A[$i];
+if(!isset($A[$i+1])){
+    echo 'Array is too small';
+    exit;
+}
+$max = $A[$i] + $A[$i+1];
 $maxndx = 0;
-$negndx = false;
-while (isset($A[$i])) {
-    if($A[$i] > $max){
-        $max = $A[$i];
+while(isset($A[$i]) && isset($A[$i+1])){
+    if($A[$i] + $A[$i+1] > $max){
+        $max = $A[$i] + $A[$i+1];
         $maxndx = $i;
-    }
-    if ($A[$i] < 0) {
-        $negndx = $i;
     }
     $i++;
 }
-if (!is_numeric($negndx)) {
-    echo 'No negatives';
-    exit;
+$min = $A[$i] + $A[$i-1];
+$minndx = $i;
+while($i>0){
+    if($A[$i] + $A[$i-1] < $min){
+        $min = $A[$i] + $A[$i-1];
+        $minndx = $i;
+    }
+    $i--;
 }
-$temp = $A[$maxndx];
-$A[$maxndx] = $A[$negndx];
-$A[$negndx] = $temp;
-print_r($A);
+echo 'Max: '.$maxndx.' Min:'. $minndx;
