@@ -1,27 +1,11 @@
 <?php
-$A = Array(1, 14, -54, 67, 12, 0, 34, 5, -27, 54, 3);
-$negndx = false;
-$posndx = 0;
-while ($A[$posndx] <= 0) {
-    $posndx++;
-    if (!isset($A[$posndx])) {
-        echo 'No positives';
-        exit;
-    }
-}
-$i = 0;
+$A = Array(1,1, 14, -54, 67,67, 12, 0, 34, 5, -27, 54, 3,3);
+$i = 1;
+$count = 0;
 while (isset($A[$i])) {
-    if ($A[$i] < 0) {
-        $negndx = $i;
+    if ($A[$i] == $A[$i-1]) {
+        $count++;
     }
     $i++;
 }
-
-if (!is_numeric($negndx)) {
-    echo 'No negatives';
-    exit;
-}
-$temp = $A[$posndx];
-$A[$posndx] = $A[$negndx];
-$A[$negndx] = $temp;
-print_r($A);
+echo $count;
