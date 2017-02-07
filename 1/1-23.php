@@ -13,7 +13,7 @@ while ($n != 0) {
 }
 $number = 0;
 for($i = 0 ; $i < 10; $i++){
-    for($j = 0; $j < $arr[$i];){
+    while($arr[$i] > 0){
         $number = $number * 10 + $i;
         $count--;
         $arr[$i]--;
