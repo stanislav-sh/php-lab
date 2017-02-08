@@ -10,16 +10,18 @@ while (isset($A[$i])) {
             $B[$A[$i]] = 0;
             continue;
         }
-        if (!isset($min)) {
+        if (!isset($max)) {
             $min = $A[$i];
         }
         $j++;
     }
-    if (!isset($B[$A[$i]]) && isset($min)) {
-        if ($A[$i] < $min)
-            $min = $A[$i];
+    if (!isset($B[$A[$i]]) && isset($max)) {
+        if ($A[$i] > $max){
+            $max = $A[$i];
+        }
+
     }
 
     $i++;
 }
-echo isset($min) ? $min : "No such variable found";
+echo isset($max) ? $max : "No such variable found";
