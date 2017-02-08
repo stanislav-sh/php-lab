@@ -16,7 +16,6 @@ while (isset($A[$i])) {
 $B = Array();
 $j = 0;
 $i = 0;
-
 while (isset($A[$i])) {
     $B[$i] = $A[$i];
     if ($A[$i] == $max) {
@@ -26,7 +25,6 @@ while (isset($A[$i])) {
             $B[$j] = $min;
             $j++;
         }
-
         break;
     }
     $i++;
