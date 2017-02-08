@@ -7,34 +7,29 @@ function count_arr($x)
     }
     return $count;
 }
+function insert_into_array($A,$index,$x){
+    for ($i = count_arr($A) - 1; $i >= $index; $i--){
+        $A[$i+1] = $A[$i];
+    }
+    $A[$index] = $x;
+    return $A;
+}
 
 $A = Array(1, 2, 3, 5, 6);
 $k = 3;
-$B = Array(1, 4, 0, 8);
+$B = Array(0,1, 4, 4, 8);
 $i = 0;
-
-while ($i < $k) {
+while ($i <= $k) {
     $j = 0;
-    $count = count_arr($A);
-    while ($j < $count) {
-        $A[$count+2] = 0;
-        print_r($A);
+    while (isset($A[$j])) {
         if ($B[$i] <= $A[$j]) {
-            $z = $j + 1;
-            $zOrig = $z;
-
-
-            while ($z - $count != 0) {
-                $A[$z] = $A[$z - 1];
-                $z++;
-            }
-            $A[$j] = $B[$k];
+           $A = insert_into_array($A, $j,$B[$i]);
             $i++;
-            $j++;
-            continue;
+            continue 2;
         }
         $j++;
     }
+    $A = insert_into_array($A, $j,$B[$i]);
     $i++;
 }
 print_r($A);
