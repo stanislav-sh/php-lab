@@ -7,7 +7,7 @@ while (isset($A[$i])) {
     if ($A[$i] < $min) {
         $min = $A[$i];
     }
-    if($A[$i] > $max){
+    if ($A[$i] > $max) {
         $max = $A[$i];
     }
     $i++;

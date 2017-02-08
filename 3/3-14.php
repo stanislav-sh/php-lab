@@ -22,7 +22,7 @@ while (isset($A[$i])) {
         $Odd[$OddNdx] = $A[$i];
         $OddNdx++;
     }
-    if ($A[$i] % 2 == 1 || $A[$i] % 2 == -1 ) {
+    if ($A[$i] % 2 == 1 || $A[$i] % 2 == -1) {
         $Even[$EvenNdx] = $A[$i];
         $EvenNdx++;
     }
