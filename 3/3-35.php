@@ -1,7 +1,7 @@
 <?php
-$arr = Array(0, 0, 1, 1, 2, 2, 0, 1, 2,2, 1,0);
+$arr = Array(2, 0, 0, 1, 1, 2, 2, 0, 1, 2, 2, 1, 0, 2);
 $size = count($arr);
-for ($i = $size -1; $i >=0 ; $i--) {
+for ($i = $size - 1; $i >= 0; $i--) {
     for ($j = $size - 2 - $i; $j >= 0; $j--) {
         if ($arr[$j + 1] == 2) {
             $tmp = $arr[$j];
