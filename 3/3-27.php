@@ -16,9 +16,10 @@ function insert_into_array($A,$index,$x){
 }
 
 $A = Array(1, 2, 3, 5, 6);
-$k = 3;
+$k = 5;
 $B = Array(0,1, 4, 4, 8);
 $i = 0;
+$k--;
 while ($i <= $k) {
     $j = 0;
     while (isset($A[$j])) {
