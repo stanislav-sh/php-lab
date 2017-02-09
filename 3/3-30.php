@@ -30,8 +30,6 @@ $count = count_arr($A);
 
 for ($i = 0; $i < $count; $i++) {
     $sum += $A[$i] * power($x, $i);
-    echo $A[$i] * power($x, $i);
-    echo '<br>';
 }
 for ($i = 0; $i < $count; $i++) {
     $B[$i] = $i * $A[$i];
@@ -39,4 +37,4 @@ for ($i = 0; $i < $count; $i++) {
 for ($i = 0; $i < $count; $i++) {
     $sumDer += $B[$i] * power($x, $i - 1);
 }
-echo 'Answer: '.$sum . ' Deriative: ' . $sumDer;
+echo 'Initial: '.$sum . ' Deriative: ' . $sumDer;
