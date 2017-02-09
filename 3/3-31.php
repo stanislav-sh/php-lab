@@ -7,6 +7,7 @@ function delete_from_array($A,$index){
     unset($A[$index]);
     return $A;
 }
+
 function count_arr($x)
 {
     $count = 0;

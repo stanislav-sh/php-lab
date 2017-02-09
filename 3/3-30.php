@@ -10,7 +10,7 @@ function count_arr($x)
 
 function power($x, $pow)
 {
-    if($pow == 0){
+    if ($pow == 0) {
         return 1;
     }
     $xOrig = $x;
@@ -37,4 +37,4 @@ for ($i = 0; $i < $count; $i++) {
 for ($i = 0; $i < $count; $i++) {
     $sumDer += $B[$i] * power($x, $i - 1);
 }
-echo 'Initial: '.$sum . ' Deriative: ' . $sumDer;
+echo 'Initial: ' . $sum . ' Deriative: ' . $sumDer;

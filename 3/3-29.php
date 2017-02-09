@@ -7,14 +7,17 @@ function count_arr($x)
     }
     return $count;
 }
-function delete_from_array($A,$index){
-    while($index < count_arr($A)-1){
-        $A[$index] = $A[$index+1];
+
+function delete_from_array($A, $index)
+{
+    while ($index < count_arr($A) - 1) {
+        $A[$index] = $A[$index + 1];
         $index++;
     }
     unset($A[$index]);
     return $A;
 }
+
 $A = Array(1, 14, -54, 67, -300, 0, 34, 5, -27, 54, 300);
 $i = 0;
 $max = $A[$i];
@@ -23,33 +26,33 @@ while (isset($A[$i])) {
     if ($A[$i] < $min) {
         $min = $A[$i];
     }
-    if($A[$i] > $max){
+    if ($A[$i] > $max) {
         $max = $A[$i];
     }
     $i++;
 }
 $i = 0;
-while(isset($A[$i])){
-    if($A[$i] == $min){
+while (isset($A[$i])) {
+    if ($A[$i] == $min) {
         $minndx = $i;
         break;
     }
     $i++;
 }
 $i = 0;
-while(isset($A[$i])){
-    if($A[$i] == $max){
+while (isset($A[$i])) {
+    if ($A[$i] == $max) {
         $maxndx = $i;
     }
     $i++;
 }
-if($minndx > $maxndx){
+if ($minndx > $maxndx) {
     $temp = $minndx;
     $minndx = $maxndx;
     $maxndx = $temp;
 }
 
-for($i = $maxndx - 1; $i > $minndx;$i--){
-    $A = delete_from_array($A,$i);
+for ($i = $maxndx - 1; $i > $minndx; $i--) {
+    $A = delete_from_array($A, $i);
 }
 print_r($A);

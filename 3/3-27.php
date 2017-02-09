@@ -7,9 +7,11 @@ function count_arr($x)
     }
     return $count;
 }
-function insert_into_array($A,$index,$x){
-    for ($i = count_arr($A) - 1; $i >= $index; $i--){
-        $A[$i+1] = $A[$i];
+
+function insert_into_array($A, $index, $x)
+{
+    for ($i = count_arr($A) - 1; $i >= $index; $i--) {
+        $A[$i + 1] = $A[$i];
     }
     $A[$index] = $x;
     return $A;
