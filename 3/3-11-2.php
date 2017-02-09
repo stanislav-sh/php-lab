@@ -1,5 +1,5 @@
 <?php
-$A = Array(-1, 100, -10, 100, -10, 1);
+$A = Array(-3, 1, -14, 33, 67, 12, 0, 34, 5, -27, -4, 3);
 $i = 0;
 $max = $A[$i];
 $min = $A[$i];
@@ -13,21 +13,21 @@ while (isset($A[$i])) {
     $i++;
 }
 $i--;
-while (isset($A[$i - 1])) {
-    if ($A[$i] > 0 && $A[$i - 1] == $min) {
+
+while (isset($A[$i])) {
+    if ($A[$i] == $min) {
+        $minFound = true;
+    }
+    if (!isset($minFound) && !isset($posAfterMin) && $A[$i] > 0) {
         $posAfterMin = $A[$i];
-        break;
+    }
+    if (isset($maxFound) && !isset($negBeforeMax) && $A[$i] < 0) {
+        $negBeforeMax = $A[$i];
+    }
+    if ($A[$i] == $max) {
+        $maxFound = true;
     }
     $i--;
-}
-$i = 0;
-
-while (isset($A[$i + 1])) {
-    if ($A[$i] < 0 && $A[$i + 1] == $max) {
-        $negBeforeMax = $A[$i];
-        break;
-    }
-    $i++;
 }
 
 echo isset($negBeforeMax) ? $negBeforeMax . '<br>' : 'Negative number before max not found<br>';
