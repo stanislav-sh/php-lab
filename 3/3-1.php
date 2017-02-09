@@ -1,22 +1,25 @@
 <?php
-$A = Array(1, 14, -54, 67, 12, 0, 34, 5, -27, 54, 3);
+$A = Array(1, 14, -54, 67, 12, 0, 34, 5, -27, 54, 3, 2, 1);
 $i = 0;
 $count = 0;
 $sum = 'No negatives';
-    while ($A[$i] >= 0) {
-        $count++;
-        $i++;
-        if(!isset($A[$i])){
-            $count = 'No negatives';
-            break;
-        }
+while ($A[$i] >= 0) {
+    $count++;
+    $i++;
+    if (!isset($A[$i])) {
+        $count = 'No negatives';
+        break;
     }
+}
 
 while (isset($A[$i])) {
     if ($A[$i] <= 0) {
         $sum = 0;
     } else {
-        $sum += $A[$i];
+        if ($A[$i] % 2 == 1) {
+            $sum += $A[$i];
+        }
+
     }
     $i++;
 }
