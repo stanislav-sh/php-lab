@@ -7,7 +7,9 @@ function count_arr($x)
     }
     return $count;
 }
-function rowContainsNegative($x){
+
+function rowContainsNegative($x)
+{
     $contains = false;
     $j = 0;
     while (isset($x[$j])) {
@@ -19,11 +21,11 @@ function rowContainsNegative($x){
     return $contains;
 }
 
-function multiplyArrayByVector($arr,$vec){
-   $arrResult = Array();
+function multiplyArrayByVector($arr, $vec)
+{
+    $arrResult = Array();
     $len = count_arr($vec);
-    for ($i = 0; $i < $len; $i++)
-    {
+    for ($i = 0; $i < $len; $i++) {
         $arrResult[$i] = 0;
         for ($j = 0; $j < $len; $j++)
             $arrResult[$i] += $arr[$i][$j] * $vec[$j];
@@ -43,7 +45,7 @@ while (isset($A[$i])) {
     $j = 0;
     $sum = 0;
     if (!rowContainsNegative($A[$i])) {
-        print_r(multiplyArrayByVector($A,$A[$i]));
+        print_r(multiplyArrayByVector($A, $A[$i]));
         exit;
     }
     $i++;

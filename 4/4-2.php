@@ -1,8 +1,8 @@
 <?php
 $A = Array(
-    Array(1, 2, 3),
-    Array(4, 5, 6),
-    Array(0, 1, 2));
+    Array(1, 2, 3, 6),
+    Array(4, 5, 6, 9),
+    Array(0, 1, 2, 0));
 $i = 0;
 while (isset($A[$i])) {
     $sumRow = 0;
@@ -22,4 +22,4 @@ while (isset($A[$i])) {
     }
     $i++;
 }
-echo 'Row number: '.($minNdx + 1);
+echo 'Row number: ' . ($minNdx + 1);

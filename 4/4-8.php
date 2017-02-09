@@ -17,14 +17,15 @@ function findMinMaxAndIndices($x)
         }
         $i++;
     }
-    return Array($min,$minndx,$max,$maxndx);
+    return Array($min, $minndx, $max, $maxndx);
 }
+
 $A = Array(
-    Array(-1,2,3),
-    Array(4,-5,6),
-    Array(9,8,7));
+    Array(-1, 2, 3),
+    Array(4, -5, 6),
+    Array(9, 8, 7));
 $i = 0;
-while(isset($A[$i])){
+while (isset($A[$i])) {
     $j = 0;
     $min = findMinMaxAndIndices($A[$i])[0];
     $minndx = findMinMaxAndIndices($A[$i])[1];

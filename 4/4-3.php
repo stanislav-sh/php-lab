@@ -28,13 +28,13 @@ function findMinAndMax($x)
         }
         $i++;
     }
-    return Array($min,$max);
+    return Array($min, $max);
 }
 
 $A = Array(
-    Array(1, 2, 3),
-    Array(4, -2, 16),
-    Array(9, 8, 7));
+    Array(1, 2, 3, 10),
+    Array(4, -2, 16, 3),
+    Array(9, 8, 7, -2));
 $i = 0;
 $sumMain = 0;
 $sumAbove = 0;
@@ -46,12 +46,11 @@ while (isset($A[$i])) {
         if (!isset($min) && !isset($max)) {
             $min = findMinAndMax($A[$i])[0];
             $max = findMinAndMax($A[$i])[1];
-        }
-        else{
-            if(findMinAndMax($A[$i])[0] < $min){
+        } else {
+            if (findMinAndMax($A[$i])[0] < $min) {
                 $min = findMinAndMax($A[$i])[0];
             }
-            if(findMinAndMax($A[$i])[1] > $max){
+            if (findMinAndMax($A[$i])[1] > $max) {
                 $max = findMinAndMax($A[$i])[1];
             }
         }
@@ -59,4 +58,4 @@ while (isset($A[$i])) {
     $i++;
 }
 
-echo (isset($min) && isset($max)) ?'min: ' . $min . ' max: ' . $max : 'No such rows found';
+echo (isset($min) && isset($max)) ? 'min: ' . $min . ' max: ' . $max : 'No such rows found';

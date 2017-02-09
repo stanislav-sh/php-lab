@@ -28,10 +28,10 @@ while (isset($A[$i])) {
         $sum = 0;
         if ($B[$j]) {
             $count = 0;
-            $N= $A[$i][$j];
+            $N = $A[$i][$j];
             while ($N != 0) {
                 $number = $N % 10;
-                $sum+=$number;
+                $sum += $number;
                 $N = (int)($N / 10);
             }
             $A[$i][$j] = $sum;

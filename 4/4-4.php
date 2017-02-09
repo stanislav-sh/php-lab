@@ -1,8 +1,8 @@
 <?php
 $A = Array(
-    Array(1, 2, 3),
-    Array(4, 81, 8310),
-    Array(0, 1, 8320));
+    Array(1, 2, 3, 3),
+    Array(4, 81, 8310, 3),
+    Array(0, 1, 8320, 3));
 $i = 0;
 $sum = 0;
 while (isset($A[$i])) {
@@ -26,4 +26,4 @@ while (isset($A[$i])) {
     }
     $i++;
 }
-echo 'Sum:'. $sum;
+echo 'Sum:' . $sum;
