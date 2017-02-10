@@ -15,7 +15,7 @@ function delete_from_array($A,$index){
     unset($A[$index]);
     return $A;
 }
-function findMax($x)
+function find_max($x)
 {
     $i = 0;
     $max = $x[0];
@@ -34,7 +34,7 @@ $A = Array(
 $i = 0;
 while (isset($A[$i])) {
     $j = 0;
-    $max = findMax($A[$i]);
+    $max = find_max($A[$i]);
     while (isset($A[$i][$j])) {
         if ($A[$i][$j] == $max) {
             $A[$i] = delete_from_array($A[$i],$j);

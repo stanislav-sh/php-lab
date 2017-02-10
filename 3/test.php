@@ -8,14 +8,15 @@ function count_arr($x)
     return $count;
 }
 
-function insert_into_array($A, $index, $x)
+function delete_from_array($A, $index)
 {
-    for ($i = count_arr($x) - 1; $i >= $index - 1; $i--) {
-        $A[$i + 1] = $A[$i];
+    while ($index < count_arr($A) - 1) {
+        $A[$index] = $A[$index + 1];
+        $index++;
     }
-    $A[$index - 1] = $x;
+    unset($A[$index]);
     return $A;
 }
 
-$A = Array(1, 2, 3, 4, 5, 6, 7, 8, 9);
-print_r(insert_into_array($A, 1, 100));
+$A = Array(1, 2);
+print_r(delete_from_array($A, 0));
