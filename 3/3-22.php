@@ -1,5 +1,5 @@
 <?php
-$A = Array(1, 1, 105, -54, -112, 12, 0, -105, 5, 105, 0, -27, -112, 54, 3, 3);
+$A = Array(1, 1, 105, -54, -112, 12, 0, 105, 5, 5, 0, -27, -112, 54, 3, 3);
 $B = Array();
 $i = 0;
 while (isset($A[$i])) {
@@ -19,9 +19,7 @@ while (isset($A[$i])) {
         if ($A[$i] > $max){
             $max = $A[$i];
         }
-
     }
-
     $i++;
 }
 echo isset($max) ? $max : "No such variable found";
